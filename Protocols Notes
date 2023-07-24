@@ -50,3 +50,18 @@ To make your webpages render faster and to maximize their performance regardless
 (5) When you need to change the style of the element, doing it with the help of the .class attribute is the most efficient option. And the deeper in the DOM tree you perform this change, the better for the rendering process.
 (6) If possible, animate only elements with a fixed or absolute position: they are going to require fewer resources to render properly than a statically positioned element.
 (7) You can try disabling complex :hover animations while scrolling to prevent the rendering webpage from slowing down the system.
+
+HTTP
+HTTP: is an application layer protocol that allows web-based applications (client–server software application accessible over the internet) to communicate and exchange data or generally an application protocol for distributed, hypermedia information systems. HTTP is the foundation of data communication for the World Wide Web, where hypertext documents include hyperlinks to other resources that the user can access. HTTP functions as a request-response protocol in the client–server computing model, and it is not only used to send and retrieve data for browsers, but it’s also a very common method of integrating applications. Link to MDN HTTP overview.
+
+ - Request: A packet of information sent from a client (often a browser) to a web server.
+ - Response: The payload that a webserver sends back to a client in response to the request.
+ - User Agent: A user agent is a piece of software acting on behalf of the user, typically a browser.
+ - URL: Uniform Resource Locator. Indicates how to get to something on the web. It’s essentially an address.
+ - Headers: A set of key/value pairs sent as part of a web request, or received as a response to a request that aren’t part of the contents. These are essentially request metadata.
+ - HTTP Methods: Indicates the intent or action of a web request.
+ - Cookie: A small piece of data that the server sends to the client (and vice versa) that is maintained for the client as long as the client session lasts.
+ - Session: The server side storage of information that should persist for the period of a user’s interaction with a website.
+ - Cache: A store of the response to an http request. This is intended to lighten the load on the server by keeping requests from going to the server when there is no need to do so.
+ - HTTP is a stateless protocol. A stateless protocol does not require the HTTP server to retain information or status about each user for the duration of multiple requests. However, some web applications implement states or server side sessions using for instance HTTP cookies or hidden variables within web forms.
+ - HTTPS extention of HTTP and it is essentially a way of encrypting HTTP traffic. This prevents man-in-the-middle attacks and data sniffing. It also ensures that you are communicating with the server that you think you are communicating with by identifying the server.
