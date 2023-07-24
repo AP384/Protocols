@@ -11,3 +11,42 @@ The browser parses the fetched CSS, and sorts the different rules by their selec
 The render tree is laid out in the structure it should appear in after the rules have been applied to it.
 The visual display of the page is shown on the screen (this stage is called painting).
 
+DOM
+The DOM, or Document Object Model, is an application programming interface that represents the structure and content of a web document, typically in the form of HTML. DOM presents the elements of a webpage as individual nodes and objects, allowing different programming languages to interact with the content of the page. DOM provides an object-oriented representation of a webpage and allows a programming language, such as JavaScript, to easily access the document structure.
+
+CSSOM
+The CSSOM, or the CSS Object Model, is a set of application programming interfaces for accessing and modifying the style-related information of a webpage. The CSSOM contains all the selectors and selector properties needed to correctly render the page. CSSOM is to CSS what DOM is to HTML, except that it deals with the styling of a webpage rather than its structure.
+
+RENDER TREE
+A render tree is a collection of objects that has to be rendered by the browser to present the information in an easily accessible manner. A render tree consists of multiple smaller elements that need to be rendered
+The structure of a render tree is consistent with the structure of the DOM: every string of text is represented by a separate element that has its corresponding DOM object and calculated style. 
+
+HOW DOES A BROWSER RENDER A WEBPAGE?
+Rendering a webpage is something a browser does on a daily basis, and there is a standard procedure for doing it that the browser goes through every time there is a page to render. Here are the steps it takes to turn a few thousand lines of code into a webpage a user expects to see.
+
+(1) HTML is received from the server and processed into the DOM.
+(2) The styles are loaded and parsed into the CSSOM.
+(3) The render tree is created using the DOM and CSSOM.
+(4) The browser creates a layout for each render tree element with its individual coordinates using the flow method, which requires just one pass to layout all the elements, compared to the tables method that requires more than one pass.
+(5) The information is displayed in the browser window in its final form through the last stage of the process, also known as painting.
+Every time the user interacts with the page or the scripts alter it in any way, additional steps are required, as both the structure and the style of the document can possibly be modified and need to be updated. In many cases, a complete re-rendering is not necessary, and the webpage can be updated with one of the two following techniques.
+
+7 TIPS FOR OPTIMISING WEBPAGE RENDERINips for optimizing your webpage rendering
+To make your webpages render faster and to maximize their performance regardless of the end user’s device and configuration, use these 7 tips to optimize the rendering process:
+
+(1) Create valid HTML and CSS with proper document encoding specifications. Styles should be included in the file and the scripts should be attached to the end of the tag.
+(2) Go for simple CSS selectors whenever possible — CSS preprocessors are not always the preferred option from the optimization standpoint. Minimize the nesting levels. In terms of performance, this is how CSS selectors rank, from fastest to slowest:
+ - Identificator (#id).
+ - Class (.class).
+ - Tag (div).
+ - Adjacent sibling selector (a + i).
+ - Parent selector (ul > li).
+ - Universal selector (*).
+ - Attribute selector (input[type="text"]).
+ - Pseudoclasses and pseudoelements (a:hover).
+
+(3) Refrain from manipulating the DOM as much as possible and maximize the use of cache whenever it’s appropriate, especially with properties and objects that will be reused. When performing complex manipulations, working with an element that is stored in the memory and only then appending it to the DOM is a better use of the available resources.
+(4) When using jQuery to select elements, make sure to implement the best practices for writing jQuery selectors.
+(5) When you need to change the style of the element, doing it with the help of the .class attribute is the most efficient option. And the deeper in the DOM tree you perform this change, the better for the rendering process.
+(6) If possible, animate only elements with a fixed or absolute position: they are going to require fewer resources to render properly than a statically positioned element.
+(7) You can try disabling complex :hover animations while scrolling to prevent the rendering webpage from slowing down the system.
